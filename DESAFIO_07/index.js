@@ -2,7 +2,7 @@
 //ALUMNA: ROSA ESTRELLA CHAMORRO
 const express = require('express');
 
-const puerto = 8085;
+const puerto = 8080;
 const app = express();
 
 //console.log('Hola Rossy y Sandra');
@@ -79,4 +79,6 @@ app.get('/api/visitas', (req, res) => {
         }
     })
 });
+
+
 
