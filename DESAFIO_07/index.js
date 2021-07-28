@@ -73,7 +73,6 @@ app.get('/api/item-random', (req, res) => {
 //ruta3
 app.get('/api/visitas', (req, res) => {
     res.json({
-        //data:'Hola Rossy',
         vistas:{
             items:cantidadVisitasruta1,
             item:cantidadVisitasruta2
