@@ -2,10 +2,9 @@
 //ALUMNA: ROSA ESTRELLA CHAMORRO
 const express = require('express');
 
+//llamando al puerto
 const puerto = 8080;
 const app = express();
-
-//console.log('Hola Rossy y Sandra');
 
 const server = app.listen(puerto, () => 
     console.log('Server Up en puerto', puerto)
@@ -47,29 +46,31 @@ const lProductos = [
 
 ];
 
-//crear la app
+//crear la apis
+
+//ruta1
 let cantidadVisitasruta1 = 0;
 const cantidadProductos = lProductos.length;
 app.get('/api/items', (req, res) => {
     cantidadVisitasruta1 = cantidadVisitasruta1+1;
     res.json({
-        //data:'Hola Rossy'
         items:lProductos, 
         cantidad: cantidadProductos
     })
 });
 
+//ruta2
 let cantidadVisitasruta2 = 0;
 app.get('/api/item-random', (req, res) => {
     cantidadVisitasruta2 = cantidadVisitasruta2+1;
+    let productoAlAzar = 0;
+    productoAlAzar = Math.floor(Math.random() * (cantidadProductos - 0) + 0);
     res.json({
-        //data:'Hola Rossy'
-        items:lProductos[3], 
-        //RANDOM (LIMITE DESDE Y HASTA)
+        items:lProductos[productoAlAzar]
     })
 });
 
-
+//ruta3
 app.get('/api/visitas', (req, res) => {
     res.json({
         //data:'Hola Rossy',
